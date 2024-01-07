@@ -54,4 +54,3 @@ jobs:
           --region=us-central1 \
           --project=${{ secrets.PROJECT_ID }}
            
-           
