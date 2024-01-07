@@ -45,7 +45,7 @@ jobs:
 
       - name: Deploy To Cloud run
         run: |
-          gcloud run deploy fastapiend \
+          gcloud run deploy footballplayers_multiclassification \
           --image=us-central1-docker.pkg.dev/${{ secrets.PROJECT_ID }}/multiclass/fastapi:latest \
           --allow-unauthenticated \
           --port=8080 \
