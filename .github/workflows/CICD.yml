@@ -52,4 +52,4 @@ jobs:
           --service-account=${{ secrets.SERVICE_ACCOUNT }} \
           --cpu-boost \
           --region=us-central1 \
-          --project=${{ secrets.PROJECT_ID }}   
+          --project=${{ secrets.PROJECT_ID }}    
