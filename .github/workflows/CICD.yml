@@ -46,10 +46,12 @@ jobs:
       - name: Deploy To Cloud run
         run: |
           gcloud run deploy multiclassification \
-          --image=us-central1-docker.pkg.dev/swift-terra-405619/multiclass/fastapi@sha256:2c91b378a27021c9ed949f070b1506b241b3b1a6423f1711afa9e4912862eb46 \
+          --image=us-central1-docker.pkg.dev/swift-terra-405619/multiclass/fastapi@sha256:a7fae04dfee1c4aa42e09c37fe7ea9dc019df24b40f12d97f2b4e925d28d3feb \
           --allow-unauthenticated \
           --port=8080 \
           --service-account=1089739269780-compute@developer.gserviceaccount.com \
           --cpu-boost \
           --region=us-central1 \
           --project=swift-terra-405619
+
+          
