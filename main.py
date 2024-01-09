@@ -9,7 +9,7 @@ from sklearn.preprocessing import LabelEncoder, StandardScaler
 
 app = FastAPI()
 app.mount("/static", StaticFiles(directory="static"), name="static")
-templates = Jinja2Templates(directory="templates")
+templates = Jinja2Templates(directory="templetes")
 
 # Modeli ve gerekli dönüşüm fonksiyonlarını yükleyin
 load_model = pickle.load(open('logreg_l2_model.pkl', 'rb'))
@@ -46,6 +46,27 @@ async def read_model_page(request: Request):
 @app.get("/redirect_to_model_page")
 async def redirect_to_model_page():
     return RedirectResponse("/model")
+
+@app.get("/index.html", response_class=HTMLResponse)
+async def details_page(request: Request):
+    return templates.TemplateResponse("index.html", {"request": request})
+
+@app.get("/about.html",response_class=HTMLResponse)
+def about(request: Request):
+    return templates.TemplateResponse("about.html", {"request": request})
+
+@app.get("/details.html",response_class=HTMLResponse)
+def about(request: Request):
+    return templates.TemplateResponse("details.html", {"request": request})
+
+@app.get("/iletisim.html",response_class=HTMLResponse)
+def about(request: Request):
+    return templates.TemplateResponse("iletisim.html", {"request": request})
+
+@app.get("/model.html",response_class=HTMLResponse)
+def about(request: Request):
+    return templates.TemplateResponse("model.html", {"request": request})
+
 
 # Form verileri için Pydantic modeli
 class PredictSchema(BaseModel):
